@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # USERS ROUTES
   get 'users/new', to: 'users#new', as: :new_user
-  post 'users/create', to: 'users#create', as: :create_user
+  post 'users/create', to: 'users#create', as: :user
   patch 'users/update'
   get 'users/edit'
   get 'users/destroy'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # INGREDIENTS ROUTES
   get 'ingredients/new', to: 'ingredients#new', as: :new_ingredient
-  post 'ingredients/create', to: 'ingredients#create', as: :create_ingredient
+  post 'ingredients/create', to: 'ingredients#create', as: :ingredient
   patch 'ingredients/update'
   get 'ingredients/edit'
   get 'ingredients/destroy'
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   # RECIPES ROUTES
   get 'recipes/new', to: 'recipes#new', as: :new_recipe
-  post 'recipes/create', to: 'recipes#create', as: :create_recipe
+  post 'recipes/create', to: 'recipes#create', as: :recipe
   patch 'recipes/update'
   get 'recipes/edit'
   get 'recipes/destroy'
