@@ -4,6 +4,12 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe_form = RecipeForm.new(params[:recipe_form])
+    if @recipe_form.save
+      redirect_to root_path#recipe_path(@recipe_form.recipe.id)
+    else
+      render :new
+    end
   end
 
   def update

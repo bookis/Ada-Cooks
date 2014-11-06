@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get 'recipes/edit'
   get 'recipes/destroy'
   get 'recipes/index'
-  get 'recipes/show'
+  get 'recipes/:id/show', to: 'recipes#show', as: :recipe
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
