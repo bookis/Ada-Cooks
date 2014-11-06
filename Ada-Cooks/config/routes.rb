@@ -1,44 +1,30 @@
 Rails.application.routes.draw do
+
+  # USERS ROUTES
   get 'users/new'
-
   get 'users/create'
-
   get 'users/update'
-
   get 'users/edit'
-
   get 'users/destroy'
-
   get 'users/index'
-
   get 'users/show'
 
+  # INGREDIENTS ROUTES
   get 'ingredients/new'
-
   get 'ingredients/create'
-
   get 'ingredients/update'
-
   get 'ingredients/edit'
-
   get 'ingredients/destroy'
-
   get 'ingredients/index'
-
   get 'ingredients/show'
 
+  # RECIPES ROUTES
   get 'recipes/new'
-
   get 'recipes/create'
-
   get 'recipes/update'
-
   get 'recipes/edit'
-
   get 'recipes/destroy'
-
   get 'recipes/index'
-
   get 'recipes/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
