@@ -1,2 +1,17 @@
 <h1>Recipes#new</h1>
 <p>Find me in app/views/recipes/new.html.erb</p>
+
+<%= form_tag recipes_path do %>
+  <%= label_tag "recipe_form[name]", "Name" %>
+  <%= text_field_tag "recipe_form[name]" %>
+
+  <%= label_tag "recipe_form[description]", "Description" %>
+  <%= text_area_tag "recipe_form[description]" %>
+
+  <% Ingredient.all.each do |ingredient| %>
+    <%= check_box_tag "recipe_form[ingredients][]", ingredient.id%>
+    <%= label_tag "recipe_form[ingredients][]", ingredient.name %> <!--to fix, set the label tag "" to be some unique id then add id attribute to check box tag -->
+  <% end %>
+
+  <%= submit_tag %>
+<% end %>

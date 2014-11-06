@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   # RECIPES ROUTES
   get 'recipes/new', to: 'recipes#new', as: :new_recipe
-  post 'recipes/create', to: 'recipes#create', as: :recipe
+  post 'recipes/create', to: 'recipes#create', as: :recipes
   patch 'recipes/update'
   get 'recipes/edit'
   get 'recipes/destroy'

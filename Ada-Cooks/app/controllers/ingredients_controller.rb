@@ -4,6 +4,13 @@ class IngredientsController < ApplicationController
   end
 
   def create
+    @ingredient = Ingredient.new(ingredients_params)
+    #pretty_print(@ingredient.name)
+    if @ingredient.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -19,5 +26,11 @@ class IngredientsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def ingredients_params
+    params.require(:ingredient).permit(:name)
   end
 end
