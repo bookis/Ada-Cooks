@@ -1,27 +1,30 @@
 Rails.application.routes.draw do
 
+  # HOME PAGE ROUTE
+  get '/', to: 'welcome#index', as: :root
+
   # USERS ROUTES
-  get 'users/new'
-  get 'users/create'
-  get 'users/update'
+  get 'users/new', to: 'users#new', as: :new_user
+  post 'users/create', to: 'users#create', as: :create_user
+  patch 'users/update'
   get 'users/edit'
   get 'users/destroy'
   get 'users/index'
   get 'users/show'
 
   # INGREDIENTS ROUTES
-  get 'ingredients/new'
-  get 'ingredients/create'
-  get 'ingredients/update'
+  get 'ingredients/new', to: 'ingredients#new', as: :new_ingredient
+  post 'ingredients/create', to: 'ingredients#create', as: :create_ingredient
+  patch 'ingredients/update'
   get 'ingredients/edit'
   get 'ingredients/destroy'
   get 'ingredients/index'
   get 'ingredients/show'
 
   # RECIPES ROUTES
-  get 'recipes/new'
-  get 'recipes/create'
-  get 'recipes/update'
+  get 'recipes/new', to: 'recipes#new', as: :new_recipe
+  post 'recipes/create', to: 'recipes#create', as: :create_recipe
+  patch 'recipes/update'
   get 'recipes/edit'
   get 'recipes/destroy'
   get 'recipes/index'
