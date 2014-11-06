@@ -2,6 +2,6 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 <% @recipes.each do |recipe| %>
   <p>
-    <%= recipe.name %>
+    <%= link_to recipe.name, recipe_path(recipe.id) %>
   </p>
 <% end %>

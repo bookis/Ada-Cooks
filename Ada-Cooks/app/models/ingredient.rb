@@ -1,5 +1,6 @@
 class Ingredient < ActiveRecord::Base
-  has_many :recipes, through: :recipes_ingredients
+  has_many :amounts
+  has_many :recipes, through: :amounts
 
   def pretty_print(name)
     name.capitalize

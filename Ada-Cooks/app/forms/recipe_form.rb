@@ -13,7 +13,7 @@ class RecipeForm
     @recipe.save
     # create recipe ingredients for each id in ingredients key
     @attributes[:ingredients].each do |id|
-      RecipesIngredients.new(ingredient_id: id, recipe_id: @recipe.id)
+      Amount.new(ingredient_id: id, recipe_id: @recipe.id)
     end
     # Create a new ingredient
     @ingredient = Ingredient.new(name: @attributes[:ingredient][:name])
