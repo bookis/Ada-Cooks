@@ -3,12 +3,16 @@
 
 <h2><%= @recipe.name %></h2>
 
+<h3>Directions</h3>
 <p>
-  <%= @recipe.instructions %>
+  <%= simple_format(@recipe.instructions)%>
 </p>
 
+<h3>Ingredients</h3>
 <p>
+  <ul>
   <% @ingredients.each do |i| %>
-    <%= i.name %>
+    <li><%= i.name %></li>
   <% end %>
+</ul>
 </p>

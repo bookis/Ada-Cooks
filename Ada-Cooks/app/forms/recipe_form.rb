@@ -12,7 +12,7 @@ class RecipeForm
                         )
     @recipe.save
 
-    # Create recipe ingredients for each id in ingredients key
+    # Associate existing recipe ingredients for each id in ingredients key
     unless @attributes[:ingredients] == nil
       @attributes[:ingredients].each do |id|
         Amount.create(ingredient_id: id, recipe_id: @recipe.id)
@@ -20,12 +20,11 @@ class RecipeForm
     end
 
     # Create a new ingredient
-    @ingredient = Ingredient.new(name: @attributes[:ingredient][:name])
-    @ingredient.save
-
+    unless @attributes[:ingredient] == nil
+      @ingredient = Ingredient.create(name: @attributes[:ingredient][:name])
+      Amount.create(ingredient_id: @ingredient.id, recipe_id: @recipe.id)
+    end
     # Associate that new ingredient with the new recipe
-
-
   end
 
   def recipe
