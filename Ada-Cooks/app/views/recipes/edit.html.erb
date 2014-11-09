@@ -12,7 +12,7 @@
 
   <% Ingredient.all.each do |ingredient| %>
     <%= check_box_tag "recipe_form[ingredients][]", ingredient.id%>
-    <%= label_tag "recipe_form[ingredients][]", ingredient.name %> <br> <!--to fix, set the label tag "" to be some unique id then add id attribute to check box tag -->
+    <%= label_tag "recipe_form[ingredients][]", ingredient.name, input_html: {:checked => params[:ingredients]} %> <br> <!--to fix, set the label tag "" to be some unique id then add id attribute to check box tag -->
   <% end %>
 
   <%= label_tag "recipe_form[ingredient][name]", "New Ingredient" %> <br>

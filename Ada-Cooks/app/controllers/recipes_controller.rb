@@ -13,10 +13,9 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe_form = Recipe.find(params[:id])
-    #raise params.inspect
-    if @recipe_form.update
-      redirect_to recipe_path(@recipe_form.id)
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(params.require(:recipe_form).permit(:name, :servings, :instructions))
+      redirect_to recipe_path(@recipe.id)
     else
       render :new
     end

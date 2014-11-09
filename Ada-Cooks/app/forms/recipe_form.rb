@@ -28,14 +28,14 @@ class RecipeForm
     # Associate that new ingredient with the new recipe
   end
 
-  def update
-    @recipe = Recipe.update(
-                          name: @attributes[:name],
-                          instructions: @attributes[:instructions],
-                          servings: @attributes[:servings]
-                          )
-    
-  end
+  # def update
+  #   @recipe = Recipe.update(
+  #                         name: @attributes[:name],
+  #                         instructions: @attributes[:instructions],
+  #                         servings: @attributes[:servings]
+  #                         )
+  #   
+  # end
 
   def recipe
     @recipe
