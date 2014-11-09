@@ -5,6 +5,9 @@
   <%= label_tag "recipe_form[name]", "Name" %> <br>
   <%= text_field_tag "recipe_form[name]" %> <br>
 
+  <%= label_tag "recipe_form[serving]", "Servings" %> <br>
+  <%= select_tag "recipe_form[serving]", options_for_select(0..12)%> <br>
+
   <%= label_tag "recipe_form[instructions]", "Instructions" %> <br>
   <%= text_area_tag "recipe_form[instructions]" %> <br>
 
