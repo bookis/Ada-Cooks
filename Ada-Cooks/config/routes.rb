@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   # RECIPES ROUTES
   get 'recipes/new', to: 'recipes#new', as: :new_recipe
   post 'recipes/create', to: 'recipes#create', as: :recipes
-  patch 'recipes/update'
-  get 'recipes/edit'
+  patch 'recipes/:id/update', to: 'recipes#update', as: :update_recipe
+  get 'recipes/:id/edit', to: 'recipes#edit', as: :edit_recipe
   get 'recipes/destroy'
   get 'recipes/index'
   get 'recipes/:id/show', to: 'recipes#show', as: :recipe

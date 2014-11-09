@@ -6,16 +6,24 @@ class RecipesController < ApplicationController
   def create
     @recipe_form = RecipeForm.new(params[:recipe_form])
     if @recipe_form.save
-      redirect_to root_path#recipe_path(@recipe_form.recipe.id)
+      redirect_to recipe_path(@recipe_form.recipe.id)
     else
       render :new
     end
   end
 
   def update
+    @recipe_form = Recipe.find(params[:id])
+    #raise params.inspect
+    if @recipe_form.update
+      redirect_to recipe_path(@recipe_form.id)
+    else
+      render :new
+    end
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
   end
 
   def destroy

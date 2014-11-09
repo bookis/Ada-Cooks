@@ -3,6 +3,11 @@
 
 <h2><%= @recipe.name %></h2>
 
+<h3>Servings</h3>
+<p>
+  This recipe serves <%= @recipe.servings %>
+</p>
+
 <h3>Directions</h3>
 <p>
   <%= simple_format(@recipe.instructions)%>
@@ -16,3 +21,5 @@
   <% end %>
 </ul>
 </p>
+
+<%= link_to "Edit #{@recipe.name}", edit_recipe_path(@recipe.id) %>

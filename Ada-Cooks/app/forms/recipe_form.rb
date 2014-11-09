@@ -8,7 +8,8 @@ class RecipeForm
     # Create an instance of the recipe class.
     @recipe = Recipe.new(
                           name: @attributes[:name],
-                          instructions: @attributes[:instructions]
+                          instructions: @attributes[:instructions],
+                          servings: @attributes[:servings]
                         )
     @recipe.save
 
@@ -25,6 +26,15 @@ class RecipeForm
       Amount.create(ingredient_id: @ingredient.id, recipe_id: @recipe.id)
     end
     # Associate that new ingredient with the new recipe
+  end
+
+  def update
+    @recipe = Recipe.update(
+                          name: @attributes[:name],
+                          instructions: @attributes[:instructions],
+                          servings: @attributes[:servings]
+                          )
+    
   end
 
   def recipe
