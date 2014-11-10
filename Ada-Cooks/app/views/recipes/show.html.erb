@@ -1,5 +1,5 @@
 <h2><%= @recipe.name %></h2>
-
+<%= link_to "Edit #{@recipe.name}", edit_recipe_path(@recipe.id, {ingredients: @ingredients.map{|i| i}}), :class => 'submit_class_name_here' %>
 <h3>Servings</h3>
 <p>
   This recipe serves <%= @recipe.servings %>
@@ -12,13 +12,13 @@
 
 <h3>Ingredients</h3>
 <p>
-  <ul>
+  <ul class="ingredient_list">
   <% @ingredients.each do |i| %>
     <li><%= i.name %></li>
   <% end %>
 </ul>
 </p>
 
-<%= link_to "Edit #{@recipe.name}", edit_recipe_path(@recipe.id, {ingredients: @ingredients.map{|i| i}}) %>
 
-<%= button_to "Delete #{@recipe.name}", delete_recipe_path(@recipe.id) %>
+
+<%= button_to "Delete #{@recipe.name}", delete_recipe_path(@recipe.id), :class => 'btn btn-default' %>
