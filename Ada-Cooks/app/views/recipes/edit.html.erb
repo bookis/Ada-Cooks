@@ -5,7 +5,7 @@
   <%= text_field_tag "recipe_form[name]", @recipe.name %> <br>
 
   <%= label_tag "recipe_form[servings]", "Servings" %> <br>
-  <%= select_tag "recipe_form[servings]", options_for_select(0..12)%> <br>
+  <%= select_tag "recipe_form[servings]", options_for_select(0..12, { :selected => @recipe.servings.to_i }) %> <br>
 
   <%= label_tag "recipe_form[instructions]", "Instructions" %> <br>
   <%= text_area_tag "recipe_form[instructions]", @recipe.instructions%> <br>
