@@ -19,5 +19,6 @@
 </ul>
 </p>
 
-<%= link_to "Edit #{@recipe.name}", edit_recipe_path(@recipe.id) %>
-<!-- , {ingredients: @ingredients.map{|i| i}})  -->
+<%= link_to "Edit #{@recipe.name}", edit_recipe_path(@recipe.id, {ingredients: @ingredients.map{|i| i}}) %>
+
+<%= button_to "Delete #{@recipe.name}", delete_recipe_path(@recipe.id) %>

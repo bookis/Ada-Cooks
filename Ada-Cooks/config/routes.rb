@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   post 'recipes/create', to: 'recipes#create', as: :recipes
   patch 'recipes/:id/update', to: 'recipes#update', as: :update_recipe
   get 'recipes/:id/edit', to: 'recipes#edit', as: :edit_recipe
-  get 'recipes/destroy'
+  post 'recipes/:id/destroy', to: 'recipes#destroy', as: :delete_recipe
   get 'recipes/index'
   get 'recipes/:id/show', to: 'recipes#show', as: :recipe
 
