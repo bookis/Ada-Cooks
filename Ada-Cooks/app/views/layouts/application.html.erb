@@ -7,22 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <h1>Wiki Cooking</h1>
-    <h4>Because anyone can change anything</h4>
-    <h5>This is TOTALLY on purpose</h5>
+  <header class="container">
+    <h1>Wiki Cooking <small>Because anyone can change anything</small></h1>
+    <h4>This is TOTALLY on purpose</h4>
+
     <div class="nav">
       <ul>
-        <li><b>Dev links</b></li>
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "New User", new_user_path %></li>
         <li><%= link_to "New Recipe", new_recipe_path %></li>
         <li><%= link_to "New Ingredient", new_ingredient_path %></li>
       </ul>
     </div>
   </header>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
