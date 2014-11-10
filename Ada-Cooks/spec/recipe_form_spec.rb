@@ -1,8 +1,13 @@
 require 'spec_helper'
+require_relative "../app/forms/recipe_form"
+
+# for reference params are "recipe_form"=>{"name"=>"soup", "servings"=>"6", "instructions"=>"Soup", "ingredients"=>["3", "4"], "ingredient"=>{"name"=>"pear"}}
 
 describe "RecipeForm" do
-  
-  let(:form) { RecipeForm.new(arguments) }
+  argument = {:recipe_form => {:name => "soup", :servings => 5 ,:ingredients => [1,2,3]}}
+  #argument = {:name => "soup", :servings => 5 ,:ingredients => [1,2,3]}
+
+  let(:form) { RecipeForm.new(argument)}
 
   describe ".new" do
     it "creates an instance of the RecipeForm class" do
@@ -15,7 +20,5 @@ describe "RecipeForm" do
       expect(form).should be_true
     end
   end
-
-  # Uninitialized Constant RecipeForm? Why?
 
 end
