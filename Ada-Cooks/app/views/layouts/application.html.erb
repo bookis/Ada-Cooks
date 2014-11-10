@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AdaCooks</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="container">
+    <h1>Wiki Cooking <small>Because anyone can change anything</small></h1>
+    <h4>This is TOTALLY on purpose</h4>
+
+    <div class="nav">
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New Recipe", new_recipe_path %></li>
+        <li><%= link_to "New Ingredient", new_ingredient_path %></li>
+      </ul>
+    </div>
+  </header>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>
